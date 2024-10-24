@@ -53,6 +53,17 @@ void tls_watchdog_clr(void);
 void tls_watchdog_init(u32 usec);
 
 /**
+ * @brief          This function is used to deinit watchdog
+ *
+ * @param[in]     None
+ *
+ * @return         None
+ *
+ * @note           None
+ */
+void tls_watchdog_deinit(void);
+
+/**
  * @brief          This function is used to reset the system.
  *
  * @param          None
@@ -62,6 +73,29 @@ void tls_watchdog_init(u32 usec);
  * @note           None
  */
 void tls_sys_reset(void);
+
+/**
+ * @brief          This function is used to set reboot reason
+ *
+ * @param          reason (enum SYS_REBOOT_REASON)
+ *
+ * @return         None
+ *
+ * @note           used with tls_sys_reset
+ */
+void tls_sys_set_reboot_reason(u32 reason);
+
+/**
+ * @brief          This function is used to get reboot reason
+ *
+ * @param          None
+ *
+ * @return         reason (enum SYS_REBOOT_REASON)
+ *
+ * @note           None
+ */
+int tls_sys_get_reboot_reason(void);
+
 
 /**
  * @}
